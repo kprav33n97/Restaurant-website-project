@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import "./style.css"
+import Menu from './menuApi.js'
+import MenuCard from './MenuCard.js'
 
 const Restaurant = () => {
+
+  const [menuData, setMenuData] = useState(Menu);
+
   return (
     <>
-      <h2>Hello Restaurant</h2>
+    <MenuCard/>
     </>
   )
 }

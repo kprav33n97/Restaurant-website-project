@@ -1,22 +1,38 @@
-import React from 'react'
+import React from "react";
 
-function MenuCard() {
+const MenuCard = ({ menuData }) => {
+  //   console.log(menuData);
+
   return (
     <>
-      <div className="card-container">
-        <div className="card">
-            <div className="card-body">
-                <span className='card-number card-circle subtle'>1</span>
-                <span className='card-author subtle'>Breakfast</span>
-                <span className='card-description subtle'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora ullam vitae quasi voluptas beatae maxime, sequi eveniet ducimus neque iusto quidem nam eum obcaecati! Earum?</span>
-                <div className="card-read">Read</div>
-            </div>
-            <img src="https://images.pexels.com/photos/19571065/pexels-photo-19571065/free-photo-of-palm-trees-against-sky.jpeg" alt="images" className='card-media' />
-            <span className='card-tag subtle'>Order now</span>
-        </div>
-      </div>
-    </>
-  )
-}
+      <section className="main-card--cointainer">
+        {menuData.map((curElem) => {
+          const { id, name, category, image, description } = curElem;
 
-export default MenuCard
+          return (
+            <>
+              <div className="card-container" key={id}>
+                <div className="card ">
+                  <div className="card-body">
+                    <span className="card-number card-circle subtle">{id}</span>
+                    <span className="card-author subtle"> {category}</span>
+                    <h2 className="card-title"> {name} </h2>
+                    <span className="card-description subtle">
+                      {description}
+                    </span>
+                    <div className="card-read">Read</div>
+                  </div>
+                  <img src={image} alt="images" className="card-media" />
+
+                  <span className="card-tag  subtle">Order Now</span>
+                </div>
+              </div>
+            </>
+          );
+        })}
+      </section>
+    </>
+  );
+};
+
+export default MenuCard;

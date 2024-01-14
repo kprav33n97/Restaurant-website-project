@@ -1,10 +1,9 @@
 import React from 'react'
+import Restaurant from './component/Basic/Restaurant'
 
 const App = () => {
   return (
-    <div>
-      My first react app
-    </div>
+      <Restaurant/>
   )
 }
 
